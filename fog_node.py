@@ -31,6 +31,23 @@ def receive_from_mobile():
         
         print("\n✅ Successfully received encrypted model update.")
 
+
+ # FL
+def aggregate_models(updates):
+    coefs = np.array([u["weights"]["coef_"] for u in updates])
+    intercepts = np.array([u["weights"]["intercept_"] for u in updates])
+
+    avg_coef = np.mean(coefs, axis=0)
+    avg_intercept = np.mean(intercepts, axis=0)
+
+    return {
+        "coef_": avg_coef.tolist(),
+        "intercept_": avg_intercept.tolist()
+    }
+
+global_model = aggregate_models(local_updates
+        
+
         # Save to JSON file
         with open(FILE_PATH, "r+", encoding="utf-8") as file:
             try:
