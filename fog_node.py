@@ -46,7 +46,7 @@ def aggregate_models(updates):
         "intercept_": avg_intercept.tolist()
     }
 
-global_model = aggregate_models(local_updates
+global_model = aggregate_models(local_updates)
         
 
         # Save to JSON file
