@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 import json
 import os
-import tensrflow
+import tensorflow
 
 app = Flask(__name__)
 
